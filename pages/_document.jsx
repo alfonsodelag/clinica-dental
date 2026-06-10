@@ -2,7 +2,7 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 export default class SandBox extends Document {
   render() {
     return (
-      <Html lang="en">
+      <Html lang="es">
         <Head>
           <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
@@ -15,7 +15,7 @@ export default class SandBox extends Document {
             crossOrigin="true"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:wght@400;500;600;700&display=swap"
             rel="stylesheet"
           />
         </Head>

@@ -1,28 +1,28 @@
-import Counter from 'components/Counter';
-import { factList1, factList2 } from '../data';
+import CountUp from 'react-countup';
+import { stats } from '../data';
 
-/**
- * Facts section that displays multiple counters using fact list data.
- *
- * @component
- * @returns {JSX.Element} Grid of animated fact counters.
- */
-const Facts = () => {
-  const combinedFacts = [...factList1, ...factList2];
-
-  return (
-    <div className="row d-flex justify-content-center align-items-center g-10 g-lg-12">
-      {combinedFacts.map(({ id, number, title, src }) => (
-        <Counter
-          key={id}
-          title={title}
-          number={number}
-          suffix="+"
-          Img={src}
-        />
-      ))}
+const Facts = () => (
+  <section className="stats-section" id="estadisticas">
+    <div className="container">
+      <div className="row">
+        {stats.map(({ id, number, suffix, decimals, title }) => (
+          <div className="col-6 col-md-3" key={id}>
+            <div className="stat-item">
+              <div className="stat-number merriweather">
+                <CountUp
+                  end={number}
+                  suffix={suffix}
+                  decimals={decimals ?? 0}
+                  separator=","
+                />
+              </div>
+              <p className="stat-title lato mb-0">{title}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  );
-};
+  </section>
+);
 
 export default Facts;

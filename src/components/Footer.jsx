@@ -3,97 +3,120 @@ import SocialLinks from 'components/SocialLinks';
 import Image from 'next/image';
 import { services, usefulLinks } from '../data';
 
-/**
- * Renders a footer widget with a title and list of links.
- *
- * @param {Array} list - List of items with `id` and `title`.
- * @param {string} title - Widget section title.
- * @returns {JSX.Element} Footer widget.
- */
 const renderWidget = (list, title) => (
   <div className="widget">
-    <h3 className="widget-title fs-24 mb-3 merriweather">{title}</h3>
+    <h3 className="widget-title fs-18 mb-3 merriweather">{title}</h3>
     <ul className="list-unstyled text-reset mb-0">
-      {list.map(({ title, id }) => (
-        <li key={id}>
-          <NextLink href="#" title={title} className="lato" />
+      {list.map(({ title: itemTitle, id }) => (
+        <li key={id} className="mb-1">
+          <NextLink href="#" title={itemTitle} className="lato" />
         </li>
       ))}
     </ul>
   </div>
 );
 
-/**
- * Footer component for the website.
- *
- * @returns {JSX.Element} Footer section with logo, widgets, social links, and contact info.
- */
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="border-top overflow-hidden bg-color">
       <div className="container pt-10 pt-md-12 pb-7">
-        <div className="row gx-10 justify-content-around">
+        <div className="row gx-8 gy-6 justify-content-between">
           {/* Logo + Description + Social */}
           <div className="col-lg-3">
-            <div className="widget d-flex flex-column align-items-center text-center text-lg-start">
-              <div className="mb-5">
+            <div className="widget d-flex flex-column">
+              <div className="mb-4">
                 <Image
-                  src="/img/logo-light.webp"
-                  alt="Dental Clinic Logo"
-                  width={200}
-                  height={100}
-                  className="text-center"
+                  src="/img/odonto-logo.jpg"
+                  alt="Odonto Panamá – Clínica Dental"
+                  width={150}
+                  height={98}
                 />
               </div>
-              <p className="lead mb-5 fs-18 text-white lato text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quas ratione odit, iste minima, debitis aliquam asperiores ab accusantium error.
+              <p className="mb-4 text-white lato" style={{ fontSize: '0.82rem', lineHeight: 1.75, opacity: 0.85 }}>
+                Clínica dental integral en Obarrio, Panamá. Atendemos niños y adultos con odontología general,
+                ortodoncia, estética, endodoncia, implantes y cirugías desde 2021.
               </p>
-              <h3 className="fs-24 text-white merriweather">Follow Us On</h3>
-              <SocialLinks className="nav social text-md-end" />
+              <h3 className="fs-16 text-white merriweather mb-2">Síguenos en</h3>
+              <div className="d-flex gap-3">
+                <a
+                  href="https://www.instagram.com/odonto.panama"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram @odonto.panama"
+                  className="text-white"
+                  style={{ fontSize: '1.2rem' }}
+                >
+                  <i className="uil uil-instagram" />
+                </a>
+                <a
+                  href="https://www.facebook.com/odontopanama"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook Odonto Panamá"
+                  className="text-white"
+                  style={{ fontSize: '1.2rem' }}
+                >
+                  <i className="uil uil-facebook" />
+                </a>
+                <a
+                  href="https://wa.me/50760544016"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp Odonto Panamá"
+                  className="text-white"
+                  style={{ fontSize: '1.2rem' }}
+                >
+                  <i className="uil uil-whatsapp" />
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Services + Useful Links */}
-          <div className="col-sm-6 col-md-4 col-lg-2 mt-md-5 mt-lg-0 mt-10 text-white">
-            {renderWidget(services, 'Services')}
-          </div>
-          <div className="col-sm-6 col-md-4 col-lg-2 mt-md-5 mt-lg-0 mt-10 text-white">
-            {renderWidget(usefulLinks, 'Useful Links')}
+          {/* Servicios */}
+          <div className="col-sm-6 col-md-4 col-lg-2 text-white">
+            {renderWidget(services, 'Servicios')}
           </div>
 
-          {/* Contact Info */}
-          <div className="col-md-4 col-lg-3 mt-md-5 mt-lg-0 mt-10">
-            <div className="widget">
-              <h3 className="widget-title fs-24 mb-3 merriweather">Contact Us</h3>
-              <div className="d-flex mb-3">
-                <i className="uil uil-location-pin-alt fs-30 text-white" />
-                <address className="ms-2 text-white lato">
-                  123 Main Street, Springfield, IL 62704, United States
+          {/* Links Útiles */}
+          <div className="col-sm-6 col-md-4 col-lg-2 text-white">
+            {renderWidget(usefulLinks, 'Navegación')}
+          </div>
+
+          {/* Contacto */}
+          <div className="col-md-4 col-lg-3">
+            <div className="widget text-white">
+              <h3 className="widget-title fs-18 mb-3 merriweather">Contáctenos</h3>
+              <div className="d-flex mb-3 align-items-start gap-2">
+                <i className="uil uil-map-marker fs-22 flex-shrink-0" />
+                <address className="lato mb-0" style={{ fontSize: '0.8rem', opacity: 0.85 }}>
+                  Avenida Abel Bravo, Duplex #7, Obarrio<br />
+                  Detrás del Hotel Sortis, Ciudad de Panamá
                 </address>
               </div>
-              <div className="d-flex mb-3 align-items-center">
-                <i className="uil uil-envelope fs-26 text-white" />
-                <a href="mailto:company@gmail.com" className="ms-2 text-white lato">
-                  company@gmail.com
+              <div className="d-flex mb-2 align-items-center gap-2">
+                <i className="uil uil-whatsapp fs-20 flex-shrink-0" />
+                <a href="https://wa.me/50760544016" className="text-white lato" style={{ fontSize: '0.82rem' }}>
+                  +507 6054-4016
                 </a>
               </div>
-              <div className="d-flex align-items-center">
-                <i className="uil uil-phone-volume fs-26 text-white" />
-                <a href="tel:+911234567890" className="ms-2 text-white lato fs-18">
-                  +91 12345 67890
+              <div className="d-flex align-items-center gap-2">
+                <i className="uil uil-envelope fs-20 flex-shrink-0" />
+                <a href="mailto:miodontopanama@gmail.com" className="text-white lato" style={{ fontSize: '0.82rem' }}>
+                  miodontopanama@gmail.com
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        <hr className="mt-4 mt-md-4 mb-7" />
+        <hr className="mt-6 mb-5" style={{ borderColor: 'rgba(255,255,255,0.15)' }} />
 
         <div className="d-md-flex align-items-center justify-content-center">
-          <p className="mb-2 mb-lg-0 text-white lato text-center">
-            © {currentYear} Dental Clinic - SEO Optimized Dental Website Template. All rights reserved.
+          <p className="mb-0 text-white lato text-center" style={{ fontSize: '0.78rem', opacity: 0.7 }}>
+            © {currentYear} Odonto Panamá – Clínica Dental. Todos los derechos reservados.
+            &nbsp;|&nbsp; Obarrio, Ciudad de Panamá.
           </p>
         </div>
       </div>
