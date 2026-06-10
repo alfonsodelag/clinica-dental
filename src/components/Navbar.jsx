@@ -8,35 +8,33 @@ import DropdownToggleLink from 'components/DropdownToggleLink';
 import { services } from '../data';
 
 const Navbar = ({
-  navOtherClass = 'navbar-other d-flex d-lg-none ms-auto',
-  navClassName = 'navbar navbar-expand-lg transparent navbar-light',
+  navOtherClass = 'navbar-other d-flex d-lg-none ms-auto align-items-center',
+  navClassName = 'navbar navbar-expand-lg transparent navbar-light main-navbar',
 }) => {
   const sticky = useSticky(350);
   const navbarRef = useRef(null);
 
   const fixedClassName =
-    'navbar navbar-expand-lg transparent navbar-light navbar-clone fixed';
+    'navbar navbar-expand-lg transparent navbar-light navbar-clone fixed main-navbar';
 
   const headerContent = (
     <Fragment>
-      {/* Brand */}
       <div className="navbar-brand">
         <NextLink
           href="/"
-          title={
+          title={(
             <Image
-              alt="Odonto Panamá – Clínica Dental en Obarrio"
-              className="py-2"
+              alt="Odonto Panamá - Clínica Dental en Obarrio"
+              className="navbar-logo"
               src="/img/odonto-logo.jpg"
-              width={150}
-              height={98}
+              width={138}
+              height={90}
               priority
             />
-          }
+          )}
         />
       </div>
 
-      {/* Offcanvas */}
       <div
         id="offcanvas-nav"
         data-bs-scroll="true"
@@ -45,16 +43,16 @@ const Navbar = ({
         <div className="offcanvas-header d-lg-none offcavas-bg">
           <NextLink
             href="/"
-            title={
+            title={(
               <Image
                 alt="Odonto Panamá"
-                className="py-2"
+                className="navbar-logo"
                 src="/img/odonto-logo.jpg"
                 width={130}
                 height={85}
                 priority
               />
-            }
+            )}
           />
           <button
             type="button"
@@ -65,7 +63,7 @@ const Navbar = ({
         </div>
 
         <div className="offcanvas-body ms-lg-auto d-flex flex-column h-100 offcavas-bg">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav align-items-lg-center">
             <li className="nav-item" data-bs-dismiss="offcanvas">
               <NextLink href="/" title="Inicio" className="nav-link" />
             </li>
@@ -87,48 +85,19 @@ const Navbar = ({
               </ul>
             </li>
             <li className="nav-item" data-bs-dismiss="offcanvas">
-              <NextLink href="#sobre-nosotros" title="Sobre Nosotros" className="nav-link" />
+              <NextLink href="/#sobre-nosotros" title="Sobre Nosotros" className="nav-link" />
             </li>
             <li className="nav-item" data-bs-dismiss="offcanvas">
-              <NextLink href="#blog" title="Blog" className="nav-link" />
+              <NextLink href="/#blog" title="Blog" className="nav-link" />
             </li>
             <li className="nav-item" data-bs-dismiss="offcanvas">
-              <NextLink href="#preguntas" title="FAQ" className="nav-link" />
+              <NextLink href="/#preguntas" title="FAQ" className="nav-link" />
             </li>
-            <li
-              className="nav-item align-items-center d-flex mt-2 mt-lg-0 ms-lg-3"
-              data-bs-dismiss="offcanvas"
-            >
-              <NextLink
-                title="Contáctenos"
-                href="#contacto"
-                className="btn btn-iom-dark mb-lg-1"
-              />
-            </li>
-            {/* WhatsApp */}
-            <li className="nav-item align-items-center d-flex ms-lg-2" data-bs-dismiss="offcanvas">
-              <a
-                href="https://wa.me/50760544016"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Contactar por WhatsApp"
-                className="d-flex align-items-center justify-content-center"
-                style={{
-                  width: 40,
-                  height: 40,
-                  borderRadius: '50%',
-                  background: '#25D366',
-                  color: '#fff',
-                  fontSize: '1.2rem',
-                  textDecoration: 'none',
-                }}
-              >
-                <i className="uil uil-whatsapp" />
-              </a>
+            <li className="nav-item align-items-center d-flex mt-3 mt-lg-0 ms-lg-3" data-bs-dismiss="offcanvas">
+              <NextLink title="Agenda tu cita" href="/#contacto" className="btn btn-iom-dark nav-cta" />
             </li>
           </ul>
 
-          {/* Mobile footer */}
           <div className="offcanvas-footer d-lg-none">
             <div>
               <a href="mailto:miodontopanama@gmail.com" className="link-inverse d-block mb-1">
@@ -141,7 +110,6 @@ const Navbar = ({
         </div>
       </div>
 
-      {/* Mobile hamburger */}
       <div className={navOtherClass}>
         <button
           data-bs-toggle="offcanvas"

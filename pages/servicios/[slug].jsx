@@ -9,8 +9,8 @@ const whatsappUrl = 'https://wa.me/50760544016';
 const ServicePage = ({ service, relatedServices }) => {
   if (!service) return null;
 
-  const pageTitle = `${service.title} | Odonto Panama`;
-  const description = `${service.summary} Agenda tu evaluacion en Odonto Panama, Obarrio.`;
+  const pageTitle = `${service.title} | Odonto Panamá`;
+  const description = `${service.summary} Agenda tu evaluación en Odonto Panamá, Obarrio.`;
 
   return (
     <>
@@ -50,7 +50,7 @@ const ServicePage = ({ service, relatedServices }) => {
                 <div className="service-hero-image">
                   <Image
                     src={service.heroImage}
-                    alt={`${service.title} en Odonto Panama`}
+                    alt={`${service.title} en Odonto Panamá`}
                     width={720}
                     height={540}
                     priority
@@ -115,10 +115,10 @@ const ServicePage = ({ service, relatedServices }) => {
               <aside className="col-lg-4">
                 <div className="service-sidebar">
                   <div className="service-sidebar-card">
-                    <span className="section-label">Odonto Panama</span>
+                    <span className="section-label">Odonto Panamá</span>
                     <h2 className="merriweather">Agenda tu evaluacion</h2>
                     <p className="lato">
-                      Estamos en Obarrio, Ciudad de Panama. Escribenos por WhatsApp para confirmar disponibilidad y resolver tus dudas.
+                      Estamos en Obarrio, Ciudad de Panamá. Escríbenos por WhatsApp para confirmar disponibilidad y resolver tus dudas.
                     </p>
                     <a
                       href={whatsappUrl}

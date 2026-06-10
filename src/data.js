@@ -14,13 +14,13 @@ export const services = [
 
 // ===================== Links útiles del footer =====================
 export const usefulLinks = [
-  { id: 1, title: 'Inicio' },
-  { id: 2, title: 'Sobre Nosotros' },
-  { id: 3, title: 'Servicios' },
-  { id: 4, title: 'Contáctenos' },
-  { id: 5, title: 'Agendar Cita' },
-  { id: 6, title: 'Política de Privacidad' },
-  { id: 7, title: 'Mapa del Sitio' }
+  { id: 1, title: 'Inicio', href: '/' },
+  { id: 2, title: 'Sobre Nosotros', href: '/#sobre-nosotros' },
+  { id: 3, title: 'Servicios', href: '/#servicios' },
+  { id: 4, title: 'Contáctenos', href: '/#contacto' },
+  { id: 5, title: 'Agendar Cita', href: '/#contacto' },
+  { id: 6, title: 'Política de Privacidad', href: '/#contacto' },
+  { id: 7, title: 'Mapa del Sitio', href: '/' }
 ];
 
 // ===================== Características - sección about =====================

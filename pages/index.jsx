@@ -11,8 +11,9 @@ import InnovationSection from 'components/InnovationSection';
 import BlogSection from 'components/BlogSection';
 import ContactSection from 'components/ContactSection';
 import PageProgress from 'components/PageProgress';
+import { getBlogPosts } from '../src/lib/sanity';
 
-const Home = () => (
+const Home = ({ posts }) => (
   <Fragment>
     <PageProgress />
     <Head>
@@ -54,12 +55,21 @@ const Home = () => (
       <InnovationSection />
 
       {/* 9. Blog */}
-      <BlogSection />
+      <BlogSection posts={posts} />
 
       {/* 10. Contacto + mapa */}
       <ContactSection />
     </main>
   </Fragment>
 );
+
+export const getStaticProps = async () => {
+  const posts = await getBlogPosts();
+
+  return {
+    props: { posts },
+    revalidate: 60
+  };
+};
 
 export default Home;

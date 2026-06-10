@@ -5,7 +5,7 @@ export const servicePages = [
     title: 'Odontologia General',
     navTitle: 'Odontologia General',
     eyebrow: 'Prevencion y diagnostico',
-    heroImage: '/img/dentist-2.jpg',
+    heroImage: '/img/dentist-7.jpg',
     icon: 'uil-stethoscope',
     summary:
       'La odontologia general es el punto de partida para cuidar la salud bucal de ninos y adultos: evaluacion, diagnostico, restauraciones, control de caries, orientacion preventiva y seguimiento periodico.',
@@ -55,7 +55,7 @@ export const servicePages = [
     title: 'Limpieza Dental y Profilaxis',
     navTitle: 'Limpieza Dental y Profilaxis',
     eyebrow: 'Prevencion profesional',
-    heroImage: '/img/dentist-5.jpg',
+    heroImage: '/img/dentist-6.jpg',
     icon: 'uil-shield-check',
     summary:
       'La limpieza dental profesional remueve placa, calculo y manchas superficiales en zonas donde el cepillo y el hilo dental no siempre alcanzan.',
@@ -109,7 +109,7 @@ export const servicePages = [
     title: 'Odontopediatria',
     navTitle: 'Odontopediatria',
     eyebrow: 'Cuidado dental infantil',
-    heroImage: '/img/dentist-5.jpg',
+    heroImage: '/img/dentist-8.jpg',
     icon: 'uil-smile',
     summary:
       'La odontopediatria acompana la salud bucal de bebes, ninos y adolescentes con un enfoque preventivo, amable y adaptado a cada edad.',
@@ -159,7 +159,7 @@ export const servicePages = [
     title: 'Ortodoncia',
     navTitle: 'Ortodoncia',
     eyebrow: 'Alineacion y mordida',
-    heroImage: '/img/dentist-3.jpg',
+    heroImage: '/img/dentist-7.jpg',
     icon: 'uil-medkit',
     summary:
       'La ortodoncia corrige dientes apiñados, espacios, mordidas alteradas y problemas de alineacion que pueden afectar estetica, higiene, masticacion y salud oral.',
@@ -259,7 +259,7 @@ export const servicePages = [
     title: 'Blanqueamiento Dental',
     navTitle: 'Blanqueamiento Dental',
     eyebrow: 'Color y brillo',
-    heroImage: '/img/dentist-1.jpg',
+    heroImage: '/img/dentist-6.jpg',
     icon: 'uil-sun',
     summary:
       'El blanqueamiento dental puede aclarar el color de dientes naturales mediante agentes blanqueadores indicados y supervisados profesionalmente.',
@@ -309,7 +309,7 @@ export const servicePages = [
     title: 'Endodoncia',
     navTitle: 'Endodoncia',
     eyebrow: 'Tratamiento de conducto',
-    heroImage: '/img/dentist-3.jpg',
+    heroImage: '/img/dentist-8.jpg',
     icon: 'uil-clipboard-notes',
     summary:
       'La endodoncia, conocida como tratamiento de conducto, permite tratar infecciones o inflamaciones profundas de la pulpa dental para conservar el diente.',
@@ -409,7 +409,7 @@ export const servicePages = [
     title: 'Implantes Dentales',
     navTitle: 'Implantes Dentales',
     eyebrow: 'Reposicion dental',
-    heroImage: '/img/dentist-2.jpg',
+    heroImage: '/img/dentist-6.jpg',
     icon: 'uil-hospital',
     summary:
       'Los implantes dentales son una opcion para reemplazar dientes perdidos mediante postes colocados en el hueso que sirven de soporte para coronas, puentes o protesis.',

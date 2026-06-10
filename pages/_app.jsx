@@ -34,14 +34,14 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Odonto Panama | Clinica Dental en Obarrio</title>
+        <title>Odonto Panamá | Clínica Dental en Obarrio</title>
         <meta
           name="description"
-          content="Clinica dental integral en Obarrio, Panama. Odontologia general, limpieza dental, ortodoncia, estetica, endodoncia, protesis, implantes y cirugias."
+          content="Clínica dental integral en Obarrio, Panamá. Odontología general, limpieza dental, ortodoncia, estética, endodoncia, prótesis, implantes y cirugías."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Odonto Panama | Clinica Dental en Obarrio" />
-        <meta property="og:description" content="Clinica dental integral en Obarrio, Panama. Agenda tu cita por WhatsApp." />
+        <meta property="og:title" content="Odonto Panamá | Clínica Dental en Obarrio" />
+        <meta property="og:description" content="Clínica dental integral en Obarrio, Panamá. Agenda tu cita por WhatsApp." />
       </Head>
       <Layout>
         <ThemeProvider>

@@ -1,40 +1,34 @@
 const Topbar = () => (
-  <section className="bg-color d-none d-md-block" style={{ padding: '8px 0' }}>
+  <section className="topbar bg-color">
     <div className="container">
-      <div className="row justify-content-between align-items-center">
-        <div className="col-xl-5 d-none d-xl-flex">
-          <p className="m-0 text-white lato" style={{ fontSize: '0.78rem' }}>
-            Obarrio, Avenida Abel Bravo, Duplex #7 — detrás del Hotel Sortis, Ciudad de Panamá
-          </p>
-        </div>
+      <div className="topbar-inner">
+        <a href="#contacto" className="topbar-location" aria-label="Ver ubicación de Odonto Panamá">
+          <i className="uil uil-map-marker" />
+          <span className="d-none d-md-inline">
+            Obarrio, Avenida Abel Bravo, Duplex #7 - detrás del Hotel Sortis
+          </span>
+          <span className="mobile-location d-md-none">Obarrio, Panamá</span>
+        </a>
 
-        <div className="d-flex align-items-center gap-4 col-auto">
+        <div className="topbar-actions">
           <a
             href="https://wa.me/50760544016"
             target="_blank"
             rel="noopener noreferrer"
-            className="d-flex align-items-center gap-2 text-decoration-none"
             aria-label="WhatsApp Odonto Panamá"
           >
-            <i className="uil uil-whatsapp text-white" style={{ fontSize: '0.9rem' }} />
-            <span className="text-white lato" style={{ fontSize: '0.78rem' }}>+507 6054-4016</span>
+            <i className="uil uil-whatsapp" />
+            <span>+507 6054-4016</span>
           </a>
-          <a
-            href="mailto:miodontopanama@gmail.com"
-            className="d-flex align-items-center gap-2 text-decoration-none"
-            aria-label="Email Odonto Panamá"
-          >
-            <i className="uil uil-envelope text-white" style={{ fontSize: '0.9rem' }} />
-            <span className="text-white lato" style={{ fontSize: '0.78rem' }}>miodontopanama@gmail.com</span>
+          <a href="mailto:miodontopanama@gmail.com" className="topbar-email d-none d-lg-inline-flex" aria-label="Email Odonto Panamá">
+            <i className="uil uil-envelope" />
+            <span>miodontopanama@gmail.com</span>
           </a>
-        </div>
-
-        <div className="d-flex align-items-center gap-3 col-auto">
-          <a href="https://www.facebook.com/odontopanama" aria-label="Facebook Odonto Panamá">
-            <i className="uil uil-facebook text-white" style={{ fontSize: '1rem' }} />
+          <a href="https://www.facebook.com/odontopanama" className="topbar-social d-none d-md-inline-flex" aria-label="Facebook Odonto Panamá">
+            <i className="uil uil-facebook" />
           </a>
-          <a href="https://www.instagram.com/odonto.panama" aria-label="Instagram @odonto.panama">
-            <i className="uil uil-instagram text-white" style={{ fontSize: '1rem' }} />
+          <a href="https://www.instagram.com/odonto.panama" className="topbar-social d-none d-md-inline-flex" aria-label="Instagram @odonto.panama">
+            <i className="uil uil-instagram" />
           </a>
         </div>
       </div>
