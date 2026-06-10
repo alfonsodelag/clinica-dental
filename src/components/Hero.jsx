@@ -71,7 +71,7 @@ const Hero = () => (
               width={560}
               height={520}
               priority
-              style={{ width: '100%', height: '520px', objectFit: 'cover' }}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' }}
             />
           </div>
         </div>
