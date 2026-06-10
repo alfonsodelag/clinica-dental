@@ -111,19 +111,19 @@
   }
 
   .innovation-accordion .accordion-button {
-    min-height: 62px;
-    padding: 14px 48px 14px 14px;
+    min-height: 54px;
+    padding: 12px 44px 12px 13px;
     font-size: 0.84rem;
   }
 
   .faq-question-icon {
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
+    width: 26px;
+    height: 26px;
+    font-size: 0.82rem;
   }
 
   .innovation-accordion .accordion-body {
-    padding: 0 16px 18px 58px;
+    padding: 0 18px 16px 49px;
     font-size: 0.82rem;
   }
 
@@ -143,6 +143,10 @@
   .blog-post-content {
     padding: 38px 0 58px;
     font-size: 0.96rem;
+  }
+
+  .blog-post-actions {
+    margin-bottom: 54px;
   }
 
   .contact-info-grid {

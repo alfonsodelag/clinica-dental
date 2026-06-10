@@ -1,5 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { services } from '../data';
+
+const web3FormsAccessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
 const contactItems = [
   {
@@ -31,33 +33,76 @@ const initialForm = {
   name: '',
   email: '',
   phone: '',
-  service: ''
+  service: '',
+  botcheck: ''
 };
 
 const ContactSection = () => {
   const [form, setForm] = useState(initialForm);
-
-  const whatsappHref = useMemo(() => {
-    const selectedService = services.find(service => service.slug === form.service)?.title || 'No especificado';
-    const message = [
-      'Hola Odonto Panamá, quiero agendar una cita.',
-      `Nombre: ${form.name || 'No especificado'}`,
-      `Email: ${form.email || 'No especificado'}`,
-      `Teléfono: ${form.phone || 'No especificado'}`,
-      `Servicio de interés: ${selectedService}`
-    ].join('\n');
-
-    return `https://wa.me/50760544016?text=${encodeURIComponent(message)}`;
-  }, [form]);
+  const [submitState, setSubmitState] = useState({
+    status: 'idle',
+    message: ''
+  });
 
   const handleChange = event => {
     const { name, value } = event.target;
     setForm(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
-    window.open(whatsappHref, '_blank', 'noopener,noreferrer');
+
+    if (!web3FormsAccessKey) {
+      setSubmitState({
+        status: 'error',
+        message: 'Falta configurar la llave de Web3Forms para enviar el formulario.'
+      });
+      return;
+    }
+
+    const selectedService = services.find(service => service.slug === form.service)?.title || 'No especificado';
+
+    setSubmitState({
+      status: 'submitting',
+      message: 'Enviando tu solicitud...'
+    });
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: web3FormsAccessKey,
+          subject: 'Nueva solicitud de cita - Odonto Panamá',
+          from_name: 'Sitio web Odonto Panamá',
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          service: selectedService,
+          botcheck: form.botcheck
+        })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'No se pudo enviar el formulario.');
+      }
+
+      setForm(initialForm);
+      setSubmitState({
+        status: 'success',
+        message: 'Gracias. Recibimos tu solicitud y te contactaremos pronto.'
+      });
+    } catch (error) {
+      setSubmitState({
+        status: 'error',
+        message: 'No pudimos enviar el formulario. Inténtalo de nuevo o escríbenos por WhatsApp.'
+      });
+    }
   };
 
   return (
@@ -71,8 +116,8 @@ const ContactSection = () => {
             Profesional
           </h2>
           <p className="lato mt-3" style={{ color: 'var(--iom-text-secondary)', maxWidth: 520, margin: '12px auto 0' }}>
-            Estamos en el corazón de Obarrio. Completa tus datos y te llevamos a WhatsApp
-            con el mensaje listo para enviar.
+            Estamos en el corazón de Obarrio. Completa tus datos y nuestro equipo
+            te contactará para coordinar la cita.
           </p>
         </div>
 
@@ -124,6 +169,17 @@ const ContactSection = () => {
             <form className="contact-form-card" onSubmit={handleSubmit}>
               <span className="section-label">Solicitud de cita</span>
               <h3 className="merriweather">Cuéntanos qué necesitas</h3>
+
+              <input
+                type="checkbox"
+                name="botcheck"
+                value="1"
+                checked={form.botcheck === '1'}
+                onChange={handleChange}
+                className="d-none"
+                tabIndex="-1"
+                autoComplete="off"
+              />
 
               <div className="row g-3">
                 <div className="col-md-6">
@@ -181,12 +237,21 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <button type="submit" className="btn btn-iom-dark w-100 d-flex align-items-center justify-content-center gap-2 mt-4">
-                <i className="uil uil-whatsapp" />
-                Enviar por WhatsApp
+              <button
+                type="submit"
+                className="btn btn-iom-dark w-100 d-flex align-items-center justify-content-center gap-2 mt-4"
+                disabled={submitState.status === 'submitting'}
+              >
+                <i className="uil uil-message" />
+                {submitState.status === 'submitting' ? 'Enviando...' : 'Enviar solicitud'}
               </button>
+              {submitState.message ? (
+                <p className={`contact-form-status lato ${submitState.status === 'success' ? 'is-success' : 'is-error'}`}>
+                  {submitState.message}
+                </p>
+              ) : null}
               <p className="contact-form-note lato">
-                No guardamos estos datos en el sitio; se usarán para preparar el mensaje de WhatsApp.
+                Tus datos se enviarán de forma segura al equipo de Odonto Panamá para coordinar tu cita.
               </p>
             </form>
           </div>
