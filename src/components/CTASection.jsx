@@ -23,18 +23,24 @@ const CTASection = () => (
         </p>
 
         <div className="d-flex flex-column align-items-center gap-3">
-          <button
+          <a
+            href="https://www.youtube.com/watch?v=ou7OnRxqTKM"
+            target="_blank"
+            rel="noopener noreferrer"
             className="play-btn"
             aria-label="Ver video sobre Odonto Panamá"
           >
             <i className="uil uil-play" style={{ marginLeft: '3px' }} />
-          </button>
-          <span
+          </a>
+          <a
+            href="https://www.youtube.com/watch?v=ou7OnRxqTKM"
+            target="_blank"
+            rel="noopener noreferrer"
             className="lato"
-            style={{ color: 'var(--iom-primary)', fontSize: '0.78rem', fontWeight: 600 }}
+            style={{ color: 'var(--iom-primary)', fontSize: '0.78rem', fontWeight: 600, textDecoration: 'none' }}
           >
             Ver Video
-          </span>
+          </a>
         </div>
       </div>
     </div>
