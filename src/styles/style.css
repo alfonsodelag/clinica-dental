@@ -502,72 +502,87 @@ section h2 {
 }
 
 .innovation-accordion .accordion-item {
-  background: #fff;
-  border: 1px solid rgba(18, 68, 92, 0.12);
-  border-radius: 8px !important;
-  box-shadow: 0 8px 20px rgba(18, 68, 92, 0.05);
-  margin-bottom: 10px;
-  overflow: hidden;
+  width: fit-content;
+  max-width: 100%;
+  background: transparent;
+  border: 0;
+  border-radius: 0 !important;
+  box-shadow: none;
+  margin-bottom: 12px;
+  overflow: visible;
 }
 
 .innovation-accordion .accordion-button {
   background: #fff;
   color: var(--iom-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  max-width: 100%;
   font-weight: 700;
   font-size: 0.92rem;
   line-height: 1.35;
-  min-height: 56px;
-  padding: 13px 50px 13px 16px;
-  box-shadow: none !important;
-  gap: 10px;
+  min-height: 0;
+  padding: 11px 17px;
+  border: 1px solid rgba(18, 68, 92, 0.16);
+  border-radius: 999px !important;
+  box-shadow: 0 8px 18px rgba(18, 68, 92, 0.06) !important;
+  gap: 9px;
+  text-align: left;
+  white-space: normal;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .innovation-accordion .accordion-button:not(.collapsed) {
-  background: #f6fbfc;
+  background: #12445c;
   color: var(--iom-primary);
+  color: #fff;
+  border-color: #12445c;
+  border-bottom-left-radius: 18px !important;
+  border-bottom-right-radius: 18px !important;
 }
 
 .innovation-accordion .accordion-button::after {
-  position: absolute;
-  right: 16px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: rgba(18, 68, 92, 0.07);
-  background-position: center;
-  background-size: 11px;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  display: none;
 }
 
-.innovation-accordion .accordion-button:not(.collapsed)::after {
-  background-color: rgba(18, 68, 92, 0.12);
+.innovation-accordion .accordion-button:hover {
+  border-color: rgba(18, 68, 92, 0.32);
+  transform: translateY(-1px);
 }
 
 .faq-question-icon {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: #eaf6f8;
   color: var(--iom-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   flex: 0 0 auto;
 }
 
 .innovation-accordion .accordion-button:not(.collapsed) .faq-question-icon {
-  background: var(--iom-primary);
+  background: rgba(255, 255, 255, 0.16);
   color: #fff;
 }
 
 .faq-question-text {
   display: block;
-  padding-right: 4px;
+  padding-right: 0;
 }
 
 .innovation-accordion .accordion-body {
-  padding: 0 48px 18px 54px;
+  width: min(620px, calc(100vw - 48px));
+  margin-top: 10px;
+  margin-bottom: 8px;
+  padding: 18px 20px;
+  border: 1px solid rgba(18, 68, 92, 0.1);
+  border-radius: 8px;
+  background: #f8fcfd;
   font-size: 0.84rem;
   color: var(--iom-text-secondary);
   line-height: 1.7;
