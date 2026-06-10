@@ -5,12 +5,11 @@ const InnovationSection = () => (
   <section className="innovation-section" id="preguntas">
     <div className="container">
       <div className="row align-items-center g-5 g-xl-10">
-        {/* Left – image */}
         <div className="col-lg-5">
           <div className="innovation-image-wrap">
             <Image
               src="/img/dentist-3.jpg"
-              alt="Equipo dental moderno – Odonto Panamá"
+              alt="Equipo dental moderno - Odonto Panamá"
               width={480}
               height={520}
               style={{ width: '100%', height: '480px', objectFit: 'cover', display: 'block' }}
@@ -18,7 +17,6 @@ const InnovationSection = () => (
           </div>
         </div>
 
-        {/* Right – FAQ accordion */}
         <div className="col-lg-7">
           <span className="section-label">Preguntas Frecuentes</span>
           <h2 className="merriweather mb-4" style={{ fontSize: '2rem', lineHeight: 1.3 }}>
@@ -31,7 +29,6 @@ const InnovationSection = () => (
             servicios y cómo agendar tu cita de forma rápida y sencilla.
           </p>
 
-          {/* Accordion */}
           <div className="accordion innovation-accordion" id="faqAccordion">
             {faqItems.map(({ id, title, body }, i) => (
               <div className="accordion-item" key={id}>
@@ -44,7 +41,10 @@ const InnovationSection = () => (
                     aria-expanded={i === 0 ? 'true' : 'false'}
                     aria-controls={`collapse-${id}`}
                   >
-                    {title}
+                    <span className="faq-question-icon">
+                      <i className="uil uil-question-circle" />
+                    </span>
+                    <span className="faq-question-text">{title}</span>
                   </button>
                 </h3>
                 <div
