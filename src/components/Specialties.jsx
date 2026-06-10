@@ -1,4 +1,5 @@
-import { specialties } from '../data';
+import NextLink from './NextLink';
+import { servicePages } from '../servicePages';
 
 const Specialties = () => (
   <section className="specialties-section" id="especialidades">
@@ -17,15 +18,22 @@ const Specialties = () => (
 
       {/* Grid */}
       <div className="row g-4">
-        {specialties.map(({ id, title, icon, description }) => (
+        {servicePages.map(({ id, title, icon, summary, slug }) => (
           <div className="col-md-6 col-lg-4" key={id}>
-            <div className="specialty-card">
-              <div className="specialty-icon">
-                <i className={`uil ${icon}`} />
-              </div>
-              <h4>{title}</h4>
-              <p>{description}</p>
-            </div>
+            <NextLink
+              href={`/servicios/${slug}`}
+              className="specialty-card specialty-card-link"
+              title={(
+                <>
+                  <div className="specialty-icon">
+                    <i className={`uil ${icon}`} />
+                  </div>
+                  <h4>{title}</h4>
+                  <p>{summary}</p>
+                  <span className="specialty-more">Conocer mas</span>
+                </>
+              )}
+            />
           </div>
         ))}
       </div>

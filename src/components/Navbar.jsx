@@ -76,10 +76,10 @@ const Navbar = ({
                 className="nav-link dropdown-toggle"
               />
               <ul className="dropdown-menu" data-bs-dismiss="offcanvas">
-                {services.map(({ id, title }) => (
+                {services.map(({ id, title, href }) => (
                   <ListItemLink
                     key={id}
-                    href="#especialidades"
+                    href={href}
                     title={title}
                     linkClassName="dropdown-item"
                   />

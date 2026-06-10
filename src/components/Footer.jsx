@@ -7,9 +7,9 @@ const renderWidget = (list, title) => (
   <div className="widget">
     <h3 className="widget-title fs-18 mb-3 merriweather">{title}</h3>
     <ul className="list-unstyled text-reset mb-0">
-      {list.map(({ title: itemTitle, id }) => (
+      {list.map(({ title: itemTitle, id, href = '#' }) => (
         <li key={id} className="mb-1">
-          <NextLink href="#" title={itemTitle} className="lato" />
+          <NextLink href={href} title={itemTitle} className="lato" />
         </li>
       ))}
     </ul>

@@ -52,4 +52,28 @@
     padding: 8px !important;
     margin-bottom: 10px;
   }
+
+  .service-hero {
+    padding: 52px 0 46px;
+  }
+
+  .service-title {
+    font-size: 2.15rem;
+  }
+
+  .service-hero-image {
+    height: 320px;
+  }
+
+  .service-content-section {
+    padding: 54px 0;
+  }
+
+  .service-check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-sidebar {
+    position: static;
+  }
 }

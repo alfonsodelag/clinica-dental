@@ -1,4 +1,4 @@
-import Head from 'next/head';
+﻿import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Fragment, useEffect, useState } from 'react';
 import ThemeProvider from 'theme/ThemeProvider';
@@ -34,14 +34,14 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>DentalClinic – Free Next.js Template for Dentists & Clinics</title>
+        <title>Odonto Panama | Clinica Dental en Obarrio</title>
         <meta
           name="description"
-          content="Free Next.js Template for Dentists, Clinics & Doctors – Built with Bootstrap"
+          content="Clinica dental integral en Obarrio, Panama. Odontologia general, limpieza dental, ortodoncia, estetica, endodoncia, protesis, implantes y cirugias."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="DentalClinic – Free Next.js Template for Dentists & Clinics" />
-        <meta property="og:description" content="Free Next.js Template for Dentists, Clinics & Doctors – Built with Bootstrap" />
+        <meta property="og:title" content="Odonto Panama | Clinica Dental en Obarrio" />
+        <meta property="og:description" content="Clinica dental integral en Obarrio, Panama. Agenda tu cita por WhatsApp." />
       </Head>
       <Layout>
         <ThemeProvider>
@@ -53,3 +53,4 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+

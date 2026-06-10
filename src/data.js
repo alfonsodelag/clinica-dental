@@ -1,15 +1,15 @@
-// ===================== Servicios del menú / footer =====================
+﻿// ===================== Servicios del menú / footer =====================
 export const services = [
-  { id: 1,  title: 'Odontología General' },
-  { id: 2,  title: 'Limpieza Dental y Profilaxis' },
-  { id: 3,  title: 'Odontopediatría' },
-  { id: 4,  title: 'Ortodoncia' },
-  { id: 5,  title: 'Estética Dental' },
-  { id: 6,  title: 'Blanqueamiento Dental' },
-  { id: 7,  title: 'Endodoncia' },
-  { id: 8,  title: 'Prótesis Dentales' },
-  { id: 9,  title: 'Implantes Dentales' },
-  { id: 10, title: 'Cirugías Dentales' }
+  { id: 1, title: 'Odontología General', slug: 'odontologia-general', href: '/servicios/odontologia-general' },
+  { id: 2, title: 'Limpieza Dental y Profilaxis', slug: 'limpieza-dental-y-profilaxis', href: '/servicios/limpieza-dental-y-profilaxis' },
+  { id: 3, title: 'Odontopediatría', slug: 'odontopediatria', href: '/servicios/odontopediatria' },
+  { id: 4, title: 'Ortodoncia', slug: 'ortodoncia', href: '/servicios/ortodoncia' },
+  { id: 5, title: 'Estética Dental', slug: 'estetica-dental', href: '/servicios/estetica-dental' },
+  { id: 6, title: 'Blanqueamiento Dental', slug: 'blanqueamiento-dental', href: '/servicios/blanqueamiento-dental' },
+  { id: 7, title: 'Endodoncia', slug: 'endodoncia', href: '/servicios/endodoncia' },
+  { id: 8, title: 'Prótesis Dentales', slug: 'protesis-dentales', href: '/servicios/protesis-dentales' },
+  { id: 9, title: 'Implantes Dentales', slug: 'implantes-dentales', href: '/servicios/implantes-dentales' },
+  { id: 10, title: 'Cirugías Dentales', slug: 'cirugias-dentales', href: '/servicios/cirugias-dentales' }
 ];
 
 // ===================== Links útiles del footer =====================
@@ -38,36 +38,42 @@ export const specialties = [
   {
     id: 1,
     title: 'Odontología General',
+    slug: 'odontologia-general',
     icon: 'uil-stethoscope',
     description: 'Evaluaciones, diagnóstico, restauraciones y mantenimiento de tu salud bucal con atención personalizada.'
   },
   {
     id: 2,
     title: 'Odontopediatría',
+    slug: 'odontopediatria',
     icon: 'uil-smile',
     description: 'Cuidamos la sonrisa de los más pequeños con técnicas amigables, seguras y sin dolor para toda la familia.'
   },
   {
     id: 3,
     title: 'Ortodoncia',
+    slug: 'ortodoncia',
     icon: 'uil-medkit',
     description: 'Corrección de la alineación dental y mordida con tratamientos fijos y removibles de última generación.'
   },
   {
     id: 4,
     title: 'Estética Dental',
+    slug: 'estetica-dental',
     icon: 'uil-star',
     description: 'Diseño de sonrisa, carillas, blanqueamiento y restauraciones estéticas para realzar tu confianza.'
   },
   {
     id: 5,
     title: 'Endodoncia',
+    slug: 'endodoncia',
     icon: 'uil-clipboard-notes',
     description: 'Tratamiento de conducto con técnicas modernas que eliminan el dolor y salvan dientes comprometidos.'
   },
   {
     id: 6,
     title: 'Implantes y Cirugías',
+    slug: 'implantes-dentales',
     icon: 'uil-hospital',
     description: 'Implantes dentales y cirugías maxilofaciales con planificación precisa y tecnología de vanguardia.'
   }
@@ -186,3 +192,4 @@ export const factList2 = [
   { id: 5, number: 200, title: 'Diseños de Sonrisa',           src: '/img/icons/smile-mackovers.webp' },
   { id: 6, number: 150, title: 'Implantes Colocados',          src: '/img/icons/pulpectomy-for-pediatric-patients.webp' }
 ];
+
