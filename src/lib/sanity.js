@@ -73,13 +73,28 @@ function normalizeSanityPost(post) {
 
   return {
     id: post._id,
-    title: post.title,
-    slug: post.slug,
-    category: post.category || 'Blog',
+    title: toSafeText(post.title, 'Publicacion'),
+    slug: toSafeText(post.slug, ''),
+    category: toSafeText(post.category, 'Blog'),
     image: post.image || urlForSanityImage(post.mainImage) || '/img/dentist-3.jpg',
-    excerpt: post.excerpt || '',
+    excerpt: toSafeText(post.excerpt, ''),
     date: publishedDate.charAt(0).toUpperCase() + publishedDate.slice(1),
-    readTime: post.readTime || '5 min',
+    readTime: toSafeText(post.readTime, '5 min'),
     body: post.body || []
   };
+}
+
+function toSafeText(value, fallback) {
+  if (typeof value === 'string') return value;
+  if (typeof value === 'number') return String(value);
+  if (Array.isArray(value)) return value.map(item => toSafeText(item, '')).filter(Boolean).join(', ') || fallback;
+  if (!value || typeof value !== 'object') return fallback;
+
+  return (
+    toSafeText(value.title, '') ||
+    toSafeText(value.name, '') ||
+    toSafeText(value.label, '') ||
+    toSafeText(value.current, '') ||
+    fallback
+  );
 }
